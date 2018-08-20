@@ -7,7 +7,7 @@ LABEL org.label-schema.vendor="Puppet SE Team" \
       org.label-schema.build-date="2018-20-11T00:00:00Z" \
       org.label-schema.schema-version="1.0"
 
-COPY myapp/* /var/www/html/
+COPY myapp/ /var/www/html/
 
 EXPOSE 80
 
