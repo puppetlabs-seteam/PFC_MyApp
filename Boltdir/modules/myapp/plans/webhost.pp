@@ -7,7 +7,8 @@ plan myapp::webhost(
   $report = apply('localhost') {
 
     class { 'nginx':
-      names_hash_bucket_size => 128
+      names_hash_bucket_size => 128,
+      service_manage = false
     }
 
     file { '/var/www/myapp':
@@ -20,7 +21,7 @@ plan myapp::webhost(
     }
 
     nginx::resource::server { 'myapp':
-      server_name         => [ $facts['ec2_metadata']['public-hostname'] ],
+      server_name         => [ 'myapp' ],
       listen_port         => 80,
       www_root            => '/var/www/myapp',
       index_files         => ['index.php'],
@@ -34,7 +35,7 @@ plan myapp::webhost(
       server             => 'myapp' ,
       www_root           => '/var/www/myapp',
       location           => '~ \.php$',
-      fastcgi            => '127.0.0.1:9000',
+      fastcgi            => 'myapp-php:9000',
       fastcgi_index      => 'index.php',
       fastcgi_split_path => '^(.+\.php)(/.+)$',
     }
