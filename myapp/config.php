@@ -1,6 +1,6 @@
 <?php
 // Database connection parameters
-$db_hostname = "myapp-db-d559c4754-t9x95";
+$db_hostname = "myapp-db";
 $db_port     = 3306;
 $db_database = "MyApp_database";
 $db_username = "MyApp_dbuser";
