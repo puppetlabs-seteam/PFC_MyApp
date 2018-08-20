@@ -1,8 +1,0 @@
-mod 'puppetlabs-stdlib',       :latest
-
-#NGINX
-mod 'puppet-nginx',            :latest
-mod 'puppetlabs-concat',       :latest
-
-# name the module holding the plan so it doesn't get purged by 'bolt module install'
-mod 'myapp', local: true
