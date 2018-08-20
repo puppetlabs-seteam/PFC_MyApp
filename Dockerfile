@@ -1,4 +1,4 @@
-FROM nginx
+FROM richarvey/nginx-php-fpm
 
 LABEL org.label-schema.vendor="Puppet SE Team" \
       org.label-schema.name="Sample App" \
@@ -14,8 +14,6 @@ RUN mkdir -p /var/www/myapp && \
 cp -rf myapp/* /var/www/myapp
 
 EXPOSE 80
-
-VOLUME [ "/var/www/myapp" ]
 
 STOPSIGNAL SIGTERM
 
