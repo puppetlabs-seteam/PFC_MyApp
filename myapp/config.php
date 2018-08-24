@@ -1,10 +1,10 @@
 <?php
 // Database connection parameters
-$db_hostname = "myapp-db";
+$db_hostname = getenv('MYSQL_SVC');
 $db_port     = 3306;
-$db_database = "MyApp_database";
-$db_username = "MyApp_dbuser";
-$db_password = "MyApp_dbpass";
+$db_database = getenv('MYSQL_DATABASE');
+$db_username = getenv('MYSQL_USER');
+$db_password = getenv('MYSQL_PASSWORD');
 
 // Image upload options
 $storage_option = "hd";
