@@ -11,6 +11,8 @@ COPY myapp/ /var/www/html/
 
 EXPOSE 80
 
+ENV RUN_SCRIPTS 1
+
 VOLUME ["/var/www/html/uploads"]
 
 STOPSIGNAL SIGTERM
